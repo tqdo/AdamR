@@ -5,7 +5,7 @@ Required package: numDeriv
 
 Install with the R commands:
 
-install.packages("devtools")
-install.packages("numDeriv")
-devtools::install_github("tqdo/AdamR")
+install.packages("devtools");
+install.packages("numDeriv");
+devtools::install_github("tqdo/AdamR");
 
