@@ -31,7 +31,6 @@ AdamR=function(theta,f,data,batch.size=100,alpha=0.1,beta1=0.9,beta2=0.999,thres
   rem = nrow(data)%%batch.size
 
   # Start
-  library(numDeriv)
   repeat{
     subset = (1-batch.size):0
     for(i in 1:(k-1)){
@@ -42,7 +41,7 @@ AdamR=function(theta,f,data,batch.size=100,alpha=0.1,beta1=0.9,beta2=0.999,thres
       # Adam
       t=t+1
       alphat=alpha/sqrt(t)
-      g = jacobian(f,theta)
+      g = numDeriv::jacobian(f,theta)
       m = beta1*m + (1-beta1)*g
       v = beta2*v + (1-beta2)*g^2
       mhat = m/(1-beta1^t)
